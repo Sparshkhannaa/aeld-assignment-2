@@ -18,7 +18,9 @@ int main(int argc,char **argv){
     openlog("a2", LOG_PID | LOG_CONS, LOG_USER);
     syslog(LOG_INFO,  "a2 utility created");
     if(filepath == NULL || writestr == NULL){
+
         syslog(LOG_ERR, "arguments not provided correctly!");
+        
         return 1;
     }
     FILE* f = fopen(filepath, "w");
